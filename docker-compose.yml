@@ -1,0 +1,12 @@
+# Dipakai oleh Coolify (Build Pack: Docker Compose).
+# Coolify membangun image dari Dockerfile di bawah, lalu mengarahkan domain yang Anda
+# atur di Coolify ke port 80 yang di-"expose". Jangan pakai "ports:" (publish ke host) —
+# biarkan proxy Coolify (Traefik/Caddy) yang menangani routing dan TLS.
+services:
+  negprof:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    expose:
+      - "80"

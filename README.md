@@ -31,6 +31,30 @@ docker run --rm -p 8080:80 negprof
 # buka http://localhost:8080
 ```
 
+## Deploy dengan Coolify
+
+Repositori ini sudah menyertakan `Dockerfile` dan `docker-compose.yml`, jadi Coolify tahu
+di mana dan bagaimana membangun image. **Pastikan ketiga berkas (`index.html`, `Dockerfile`,
+`docker-compose.yml`) sudah di-commit dan di-push** ke repositori Git yang terhubung ke Coolify.
+
+**Cara yang disarankan — Build Pack: Docker Compose**
+
+1. Di Coolify: **+ New** → **Application** → pilih sumber Git repositori ini.
+2. **Build Pack:** pilih **Docker Compose**. Coolify otomatis menemukan `docker-compose.yml`
+   di root (Base Directory `/`).
+3. Isi **Domain** untuk aplikasi (mis. `negprof.perusahaan.id`). Coolify mengarahkan domain
+   itu ke port **80** yang di-`expose` di compose, lengkap dengan TLS otomatis.
+4. **Deploy.**
+
+**Alternatif — Build Pack: Dockerfile**
+
+1. **Build Pack:** pilih **Dockerfile**.
+2. **Dockerfile Location:** `/Dockerfile` · **Base Directory:** `/`.
+3. **Ports Exposes:** `80` (sudah dideklarasikan lewat `EXPOSE 80`, tetapi set manual bila perlu).
+4. Isi **Domain**, lalu **Deploy.**
+
+Untuk melihat perubahan setelah push, cukup klik **Redeploy** (atau aktifkan auto-deploy via webhook).
+
 ## Tanpa Docker
 
 `index.html` sepenuhnya statis, sehingga bisa:
