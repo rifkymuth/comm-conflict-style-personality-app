@@ -1,1 +1,47 @@
-# comm-conflict-style-personality-app
+# Profil Gaya Negosiasi
+
+Aplikasi tes kepribadian untuk pelatihan internal: mengukur **gaya komunikasi** dan
+**gaya menghadapi konflik** peserta (Big Five, Social Styles, dual-concern, lapis NLP).
+Seluruh antarmuka dalam Bahasa Indonesia.
+
+Aplikasi berupa **satu berkas statis** (`index.html`) yang berjalan sepenuhnya di browser
+(perhitungan skor dan penyimpanan jawaban memakai `localStorage`). Tidak ada backend.
+
+Empat tab:
+
+1. **Isi Tes** — peserta mengisi identitas dan 61 pernyataan.
+2. **Hasil Saya** — hasil individu + *kode hasil* untuk dikirim ke fasilitator.
+3. **Rekap Tim** — fasilitator menempel kode hasil peserta untuk melihat rekap tim.
+4. **Metodologi** — dasar ilmiah dan batasan penggunaan tes.
+
+## Mode uji coba (`?demo`)
+
+Secara bawaan ini adalah **versi produksi**: tombol bantu demo tersembunyi.
+
+- Buka `index.html` biasa → produksi (tombol "Isi jawaban acak" dan "Muat data contoh"
+  tidak tampil; tab Rekap Tim terbuka kosong).
+- Buka `index.html?demo` → tombol demo muncul dan tab Rekap Tim memuat 8 peserta contoh,
+  berguna untuk QA/peragaan.
+
+## Menjalankan dengan Docker (nginx:alpine)
+
+```sh
+docker build -t negprof .
+docker run --rm -p 8080:80 negprof
+# buka http://localhost:8080
+```
+
+## Tanpa Docker
+
+`index.html` sepenuhnya statis, sehingga bisa:
+
+- dibuka langsung di browser (klik dua kali berkasnya), atau
+- disajikan oleh server statis apa pun, mis. `npx serve .`, atau
+- diunggah ke hosting statis / nginx internal perusahaan.
+
+## Catatan
+
+- Font dimuat dari Google Fonts (CDN). Bila jaringan internal tanpa internet, tampilan
+  otomatis beralih ke font sistem (Segoe UI dsb.) tanpa mengubah tata letak.
+- Data peserta hanya tersimpan di browser masing-masing; kode hasil berisi nama, unit,
+  dan skor — bagikan hanya ke fasilitator.

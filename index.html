@@ -1,0 +1,639 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Profil Gaya Negosiasi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: alat kerja satu kolom (maks 860px) dengan tab; hasil memakai grid kartu yang turun ke satu kolom di ponsel */
+:root{
+  --bg:#F3F4F8; --surface:#FFFFFF; --sunk:#E9EBF3; --ink:#1B1E2E; --muted:#5B6077; --line:#D9DCE8;
+  --accent:#37409A; --accent-soft:#E4E6F7; --accent2:#B97A12; --danger:#B3402A; --ok:#2D7A47;
+  --tiger:#C9611A; --peacock:#11857A; --dolphin:#2C70BA; --owl:#76663A;
+  --shark:#4C586A; --eagle:#5548C6; --fox:#B04E28; --turtle:#3A8346; --bear:#A26F14;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#11121A; --surface:#1A1C28; --sunk:#232636; --ink:#E7E8F1; --muted:#A1A5BD; --line:#2F3246;
+  --accent:#9298F2; --accent-soft:#272A4A; --accent2:#E3A84B; --danger:#EE826A; --ok:#6CC58B;
+  --tiger:#F0904B; --peacock:#3FC2B3; --dolphin:#6AA7EC; --owl:#C4B27A;
+  --shark:#9AA6B8; --eagle:#9E95F5; --fox:#EB8A60; --turtle:#74C482; --bear:#E0AA4C;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#11121A; --surface:#1A1C28; --sunk:#232636; --ink:#E7E8F1; --muted:#A1A5BD; --line:#2F3246;
+  --accent:#9298F2; --accent-soft:#272A4A; --accent2:#E3A84B; --danger:#EE826A; --ok:#6CC58B;
+  --tiger:#F0904B; --peacock:#3FC2B3; --dolphin:#6AA7EC; --owl:#C4B27A;
+  --shark:#9AA6B8; --eagle:#9E95F5; --fox:#EB8A60; --turtle:#74C482; --bear:#E0AA4C;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px));padding-block:20px 60px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:20px;min-width:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,6vw,40px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:22px;font-weight:700}
+h3{font-size:17px;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+header.top{display:flex;flex-direction:column;gap:8px;padding-top:8px}
+header.top .lede{max-width:62ch;color:var(--muted)}
+nav.tabs{display:flex;gap:4px;background:var(--sunk);padding:4px;border-radius:12px;overflow-x:auto}
+nav.tabs button{flex:1 0 auto;border:0;background:transparent;color:var(--muted);font:600 14px var(--f-body);padding:10px 14px;border-radius:9px;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,label:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 14px var(--f-body);padding:10px 16px;border-radius:10px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn.warn{border-color:var(--danger);color:var(--danger)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.notice{background:var(--accent-soft);border-radius:12px;padding:12px 16px;font-size:14px}
+.notice.sample{border:1px dashed var(--accent2);background:transparent}
+
+/* Tes */
+.id-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.id-grid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+.field input,textarea{font:15px var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 12px;width:100%}
+.progress{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center}
+.progress .bar{flex:1;height:8px;background:var(--sunk);border-radius:99px;overflow:hidden}
+.progress .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.progress .count{font:600 13px var(--f-mono);font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.section-head{display:flex;flex-direction:column;gap:4px}
+.item{padding:14px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.item:first-of-type{border-top:0}
+.item .q{display:flex;gap:10px}
+.item .q b{font:600 12px var(--f-mono);color:var(--muted);min-width:26px;padding-top:2px}
+.item.missing .q{color:var(--danger)}
+.lik{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding-left:36px}
+.lik label{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;border:1px solid var(--line);border-radius:9px;padding:8px 2px;cursor:pointer;font-size:11px;color:var(--muted);text-align:center;line-height:1.2}
+.lik label span{font:600 15px var(--f-mono);color:var(--ink)}
+.lik input,.opts input{position:absolute;opacity:0;pointer-events:none}
+.lik label:has(input:checked){background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.lik label:has(input:checked) span{color:var(--surface)}
+.scale-legend{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding-left:36px}
+.opts{display:flex;flex-direction:column;gap:6px;padding-left:36px}
+.opts label{position:relative;border:1px solid var(--line);border-radius:9px;padding:10px 12px;cursor:pointer;font-size:14px}
+.opts label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+@media (max-width:480px){.lik,.opts,.scale-legend{padding-left:0}.lik label{font-size:0}.lik label span{font-size:15px}}
+
+/* Hasil */
+.hero{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.badges{display:flex;gap:8px}
+.badge{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font:800 22px var(--f-display);color:var(--surface)}
+.hero .big{font:800 clamp(26px,5.5vw,36px)/1.05 var(--f-display);letter-spacing:-.01em}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:600;padding:4px 10px;border-radius:99px;background:var(--sunk);color:var(--ink)}
+@media (max-width:520px){.hero{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:700px){.grid2{grid-template-columns:1fr}}
+.bars{display:flex;flex-direction:column;gap:9px}
+.barrow{display:grid;grid-template-columns:130px 1fr 40px;gap:10px;align-items:center;font-size:13px}
+.barrow .track{height:10px;background:var(--sunk);border-radius:99px;overflow:hidden}
+.barrow .track i{display:block;height:100%;border-radius:99px}
+.barrow .v{font:600 12px var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+.barrow.top .lbl{font-weight:700}
+.poles{display:flex;flex-direction:column;gap:12px}
+.pole{display:flex;flex-direction:column;gap:4px;font-size:13px}
+.pole .ends{display:flex;justify-content:space-between;color:var(--muted)}
+.pole .ends b{color:var(--ink)}
+.pole .line{position:relative;height:8px;background:var(--sunk);border-radius:99px}
+.pole .line i{position:absolute;top:-4px;width:16px;height:16px;border-radius:50%;background:var(--accent);transform:translateX(-50%);border:3px solid var(--surface)}
+svg.quad{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
+svg text{fill:var(--muted);font-family:var(--f-body)}
+.interp{display:flex;flex-direction:column;gap:14px}
+.interp .blk{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px}
+.interp .blk dt{font-weight:700;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding-top:2px;min-width:110px}
+.interp .blk dd{margin:0}
+@media (max-width:520px){.interp .blk{grid-template-columns:1fr}.interp .blk dt{padding-top:6px}}
+ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.trait{border-top:1px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:2px;font-size:14px}
+.trait:first-child{border-top:0;padding-top:0}
+.trait b .lvl{font-weight:600;color:var(--accent2);font-size:12px;margin-left:6px;text-transform:uppercase;letter-spacing:.05em}
+.code{font:13px var(--f-mono);background:var(--sunk);border-radius:9px;padding:10px 12px;word-break:break-all;user-select:all}
+.toast{font-size:13px;color:var(--ok);font-weight:600}
+
+/* Tim */
+textarea{min-height:110px;font:13px var(--f-mono);resize:vertical}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:13px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--sunk)}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.insight{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+.insight .sev{flex:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:6px;margin-top:1px}
+.sev.w{background:color-mix(in srgb, var(--accent2) 18%, transparent);color:var(--accent2)}
+.sev.i{background:var(--accent-soft);color:var(--accent)}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (max-width:560px){.roles{grid-template-columns:1fr}}
+.role{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:2px;font-size:14px}
+.role .who{font-family:var(--f-display);font-weight:700;font-size:17px}
+.pairs{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.legend-animals{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.animal-mini{display:flex;gap:10px;align-items:center;font-size:13px}
+.animal-mini .badge{width:38px;height:38px;border-radius:11px;font-size:14px;flex:none}
+.ref li{font-size:14px}
+/* Tim · tabel peserta: tumpuk jadi kartu per-orang di layar sempit agar tidak perlu geser mendatar */
+@media (max-width:600px){
+  .tablewrap{overflow-x:visible;border:0;border-radius:0}
+  table{min-width:0;font-size:14px}
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  table,tbody,tr,td{display:block;width:100%}
+  tr{border:1px solid var(--line);border-radius:12px;padding:4px 0;margin-bottom:12px}
+  tr:last-child{margin-bottom:0}
+  td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 14px;border-bottom:1px solid var(--line);white-space:normal;text-align:right}
+  tr td:last-child{border-bottom:0}
+  td::before{content:attr(data-label);flex:none;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  td[data-label="Nama"]{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">A+CSR Indonesia × AsM Law Office · Pelatihan Negosiasi &amp; Resolusi Konflik</div>
+    <h1>Profil Gaya Negosiasi</h1>
+    <p class="lede">Kenali kepribadian, gaya komunikasi, dan cara Anda menghadapi konflik sebelum masuk ke meja perundingan. 61 pernyataan, sekitar 12–15 menit. Tidak ada jawaban benar atau salah.</p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="tab-tes" data-tab="tes" aria-selected="true">1 · Isi Tes</button>
+    <button role="tab" id="tab-hasil" data-tab="hasil" aria-selected="false">2 · Hasil Saya</button>
+    <button role="tab" id="tab-tim" data-tab="tim" aria-selected="false">3 · Rekap Tim</button>
+    <button role="tab" id="tab-metode" data-tab="metode" aria-selected="false">Metodologi</button>
+  </nav>
+
+  <!-- TES -->
+  <section id="p-tes" class="wrap" style="gap:16px">
+    <div class="card">
+      <div class="id-grid">
+        <label class="field" for="nm">Nama<input id="nm" autocomplete="name" placeholder="mis. Rina Pratiwi"></label>
+        <label class="field" for="un">Unit / jabatan<input id="un" placeholder="mis. Community Relations"></label>
+      </div>
+      <p class="small muted">Jawab sesuai diri Anda yang sebenarnya dalam situasi kerja sehari-hari, bukan yang ideal. Jawaban tersimpan otomatis di perangkat ini.</p>
+    </div>
+    <div class="progress">
+      <div class="bar"><i id="pbar"></i></div>
+      <span class="count" id="pcount">0/61</span>
+      <button class="btn primary" id="btn-finish">Lihat hasil</button>
+    </div>
+    <div id="sections" class="wrap" style="gap:16px"></div>
+    <div class="row">
+      <button class="btn primary" id="btn-finish2">Lihat hasil</button>
+      <button class="btn" id="btn-demo" hidden>Isi jawaban acak (uji coba)</button>
+      <button class="btn warn" id="btn-reset">Kosongkan jawaban</button>
+    </div>
+  </section>
+
+  <!-- HASIL -->
+  <section id="p-hasil" class="wrap" style="gap:16px" hidden></section>
+
+  <!-- TIM -->
+  <section id="p-tim" class="wrap" style="gap:16px" hidden>
+    <div class="card">
+      <h2>Rekap tim untuk fasilitator</h2>
+      <p class="muted">Setiap peserta menyalin <b>kode hasil</b> dari tab "Hasil Saya" dan mengirimkannya ke fasilitator (WhatsApp/email). Tempel semua kode di bawah, satu per baris.</p>
+      <label class="field" for="codes">Kode hasil peserta<textarea id="codes" placeholder="NEG1.xxxxx&#10;NEG1.yyyyy"></textarea></label>
+      <div class="row">
+        <button class="btn primary" id="btn-team">Analisis tim</button>
+        <button class="btn" id="btn-sample" hidden>Muat data contoh</button>
+        <button class="btn" id="btn-csv">Salin tabel (CSV)</button>
+        <span class="toast" id="team-toast"></span>
+      </div>
+    </div>
+    <div id="team-out" class="wrap" style="gap:16px"></div>
+  </section>
+
+  <!-- METODE -->
+  <section id="p-metode" class="wrap" style="gap:16px" hidden>
+    <div class="card">
+      <h2>Lima lapis pengukuran</h2>
+      <div class="interp">
+        <dl class="blk"><dt>Bagian 1</dt><dd><b>Big Five (Mini-IPIP, 20 butir)</b> — Ekstraversi, Keramahan (Agreeableness), Ketelitian (Conscientiousness), Stabilitas Emosi, Keterbukaan. Butir diadaptasi dari Mini-IPIP (Donnellan dkk., 2006), turunan International Personality Item Pool (Goldberg) yang berdomain publik. Ekstraversi menentukan label Introvert / Ambivert / Ekstrovert.</dd></dl>
+        <dl class="blk"><dt>Bagian 2</dt><dd><b>Gaya Sosial (12 butir)</b> — dua dimensi dari model Social Styles (Merrill &amp; Reid, 1981), yang juga mendasari DISC: <i>asertivitas</i> (bertanya ↔ mengarahkan) dan <i>responsivitas</i> (fokus tugas ↔ fokus orang). Kombinasinya menghasilkan empat gaya komunikasi: Tiger, Peacock, Dolphin, Owl.</dd></dl>
+        <dl class="blk"><dt>Bagian 3</dt><dd><b>Gaya Konflik (15 butir)</b> — model <i>dual concern</i> (Blake &amp; Mouton, 1964; Thomas &amp; Kilmann, 1974; Rahim, 1983): kepedulian pada kepentingan sendiri × kepedulian pada pihak lain. Metafora hewan mengikuti D.W. Johnson (Shark, Turtle, Teddy Bear, Fox; mode kolaborasi diberi nama Eagle agar tidak bertabrakan dengan Owl). Butir disusun ulang; tidak menyalin instrumen TKI yang berlisensi.</dd></dl>
+        <dl class="blk"><dt>Bagian 4–5</dt><dd><b>Lapis NLP</b> — preferensi sistem representasi VAK (Bandler &amp; Grinder) dan empat meta-program dari LAB Profile (Charvet): arah motivasi, rujukan, opsi/prosedur, cakupan. Berguna untuk membangun <i>rapport</i> dan memilih bahasa persuasi.</dd></dl>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Rumus skor</h2>
+      <ul class="clean">
+        <li>Skala Likert 1–5; butir negatif dibalik (6 − nilai).</li>
+        <li>Skor dimensi = (jumlah − minimum) ÷ (maksimum − minimum) × 100. Rendah &lt; 40, Sedang 40–60, Tinggi &gt; 60.</li>
+        <li>Stabilitas Emosi = 100 − skor Neurotisisme.</li>
+        <li>Gaya komunikasi: asertivitas ≥ 50 dan responsivitas &lt; 50 → Tiger; keduanya ≥ 50 → Peacock; asertivitas &lt; 50, responsivitas ≥ 50 → Dolphin; keduanya &lt; 50 → Owl.</li>
+        <li>Gaya konflik utama = mode dengan skor tertinggi; mode kedua = gaya cadangan; mode terendah = area latihan.</li>
+        <li>VAK = hitungan pilihan terbanyak dari 6 butir; meta-program = 2 butir per dimensi (2–0 jelas, 1–1 seimbang).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Batasan penggunaan</h2>
+      <ul class="clean">
+        <li>Alat ini untuk <b>refleksi dan diskusi pelatihan</b>, bukan untuk seleksi, promosi, atau penilaian kinerja.</li>
+        <li>Versi bahasa Indonesia ini adalah adaptasi dan belum divalidasi psikometrik pada populasi Indonesia. Untuk keputusan SDM, gunakan instrumen berlisensi yang dikelola psikolog.</li>
+        <li>Gaya konflik bersifat situasional: semua mode berguna pada keadaan tertentu. Skor menggambarkan kebiasaan, bukan batas kemampuan.</li>
+        <li>Klaim NLP tentang sistem representasi dominan tidak didukung riset empiris yang kuat (Sharpley, 1987; Witkowski, 2010). Gunakan hasil VAK dan meta-program sebagai alat bantu komunikasi, bukan diagnosis.</li>
+        <li>Data hanya tersimpan di browser peserta. Kode hasil berisi nama, unit, dan skor; bagikan hanya ke fasilitator.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Rujukan</h2>
+      <ul class="clean ref">
+        <li>Barry, B. &amp; Friedman, R. (1998). Bargainer characteristics in distributive and integrative negotiation. <i>J. Personality &amp; Social Psychology</i>, 74(2).</li>
+        <li>Donnellan, M.B., Oswald, F.L., Baird, B.M. &amp; Lucas, R.E. (2006). The Mini-IPIP scales. <i>Psychological Assessment</i>, 18(2).</li>
+        <li>Merrill, D. &amp; Reid, R. (1981). <i>Personal Styles and Effective Performance</i>. Chilton.</li>
+        <li>Thomas, K.W. &amp; Kilmann, R.H. (1974). <i>Thomas-Kilmann Conflict Mode Instrument</i>. Xicom.</li>
+        <li>Rahim, M.A. (1983). A measure of styles of handling interpersonal conflict. <i>Academy of Management Journal</i>, 26(2).</li>
+        <li>Johnson, D.W. (1981). <i>Reaching Out: Interpersonal Effectiveness and Self-Actualization</i>. Prentice-Hall.</li>
+        <li>Sharma, S., Bottom, W. &amp; Elfenbein, H.A. (2013). On the role of personality, cognitive ability, and emotional intelligence in predicting negotiation outcomes. <i>Organizational Psychology Review</i>, 3(4).</li>
+        <li>Charvet, S.R. (1997). <i>Words That Change Minds: Mastering the Language of Influence</i>. Kendall/Hunt.</li>
+        <li>Witkowski, T. (2010). Thirty-five years of research on Neuro-Linguistic Programming. <i>Polish Psychological Bulletin</i>, 41(2).</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+/* ---------- BUTIR ---------- */
+const B5=[
+ ['b1','E',0,'Saya menjadi penghidup suasana dalam pertemuan kelompok.'],
+ ['b2','A',0,'Saya ikut merasakan perasaan orang lain.'],
+ ['b3','C',0,'Saya segera menyelesaikan pekerjaan rutin, tidak menunda.'],
+ ['b4','N',0,'Suasana hati saya mudah berubah-ubah.'],
+ ['b5','O',0,'Saya memiliki imajinasi yang hidup.'],
+ ['b6','E',1,'Saya tidak banyak bicara.'],
+ ['b7','A',1,'Saya tidak terlalu tertarik pada masalah orang lain.'],
+ ['b8','C',1,'Saya sering lupa mengembalikan barang ke tempatnya.'],
+ ['b9','N',1,'Sebagian besar waktu saya merasa tenang.'],
+ ['b10','O',1,'Saya tidak tertarik pada gagasan-gagasan abstrak.'],
+ ['b11','E',0,'Dalam acara atau pertemuan, saya berbicara dengan banyak orang yang berbeda.'],
+ ['b12','A',0,'Saya peka terhadap emosi orang lain.'],
+ ['b13','C',0,'Saya menyukai keteraturan.'],
+ ['b14','N',0,'Saya mudah merasa kesal.'],
+ ['b15','O',1,'Saya sulit memahami gagasan-gagasan abstrak.'],
+ ['b16','E',1,'Saya lebih suka berada di belakang layar.'],
+ ['b17','A',1,'Sejujurnya, saya kurang tertarik pada orang lain.'],
+ ['b18','C',1,'Saya sering membuat pekerjaan menjadi berantakan.'],
+ ['b19','N',1,'Saya jarang merasa murung.'],
+ ['b20','O',1,'Imajinasi saya kurang berkembang.']
+];
+const SS=[
+ ['s1','a',0,'Dalam rapat, saya cepat menyampaikan pendapat dan mengambil posisi.'],
+ ['s2','r',0,'Saya mudah menunjukkan perasaan dan antusiasme saat berbicara.'],
+ ['s3','a',0,'Saya lebih suka mengarahkan pembicaraan daripada mengikuti alurnya.'],
+ ['s4','r',0,'Saya membangun hubungan pribadi dulu sebelum membahas pekerjaan.'],
+ ['s5','a',1,'Saya cenderung mendengarkan dan bertanya dulu sebelum menyatakan sikap.'],
+ ['s6','r',1,'Saya lebih suka pembicaraan yang langsung ke pokok tugas, tanpa basa-basi.'],
+ ['s7','a',0,'Saya mengambil keputusan dengan cepat, meski informasinya belum lengkap.'],
+ ['s8','r',0,'Dalam memutuskan, dampak pada orang lain sama pentingnya dengan data.'],
+ ['s9','a',0,'Saat tidak setuju, saya langsung mengatakannya.'],
+ ['s10','r',0,'Saya sering memakai cerita atau pengalaman pribadi untuk meyakinkan orang.'],
+ ['s11','a',1,'Saya nyaman membiarkan orang lain memimpin diskusi.'],
+ ['s12','r',1,'Orang menilai saya tenang, formal, dan sulit ditebak perasaannya.']
+];
+const CF=[
+ ['c1','comp','Berusaha keras agar posisi saya yang diterima.'],
+ ['c2','coll','Mengajak semua pihak membuka kepentingan masing-masing secara terbuka.'],
+ ['c3','compr','Mengusulkan jalan tengah agar kesepakatan cepat tercapai.'],
+ ['c4','avoid','Menunda pembahasan isu sensitif sampai situasinya lebih tenang.'],
+ ['c5','acc','Mengalah demi menjaga hubungan baik.'],
+ ['c6','comp','Menggunakan argumen, data, atau kewenangan untuk memenangkan pendapat.'],
+ ['c7','coll','Mencari solusi baru yang memenuhi kebutuhan kedua pihak sepenuhnya.'],
+ ['c8','compr','Bersedia melepas sebagian tuntutan jika pihak lain juga melakukannya.'],
+ ['c9','avoid','Menghindari pembicaraan yang berpotensi menimbulkan ketegangan.'],
+ ['c10','acc','Mendahulukan kebutuhan pihak lain dibanding kebutuhan saya.'],
+ ['c11','comp','Enggan mundur dari tuntutan awal saya.'],
+ ['c12','coll','Meluangkan waktu lebih lama demi solusi yang benar-benar disepakati bersama.'],
+ ['c13','compr','Mencari pembagian yang adil: masing-masing mendapat sebagian.'],
+ ['c14','avoid','Membiarkan orang lain menangani konflik bila memungkinkan.'],
+ ['c15','acc','Mengikuti keinginan pihak lain agar suasana tetap harmonis.']
+];
+const VAK=[
+ ['v1','Saat mempelajari prosedur baru, saya paling cepat paham melalui…',[['v','Diagram, gambar, atau alur tertulis'],['a','Penjelasan lisan dan diskusi'],['k','Mencoba langsung']]],
+ ['v2','Saat mengingat rapat penting, yang paling melekat adalah…',[['v','Tampilan slide, ruangan, ekspresi wajah'],['a','Kata-kata dan nada bicara orang'],['k','Suasana dan apa yang saya rasakan']]],
+ ['v3','Saat meyakinkan orang lain, saya cenderung…',[['v','Menunjukkan peta, grafik, atau foto'],['a','Menjelaskan dengan cerita dan argumen'],['k','Mengajak ke lapangan agar mereka mengalami sendiri']]],
+ ['v4','Ungkapan yang sering saya pakai…',[['v','"Kelihatannya…", "Dari yang saya lihat…"'],['a','"Kedengarannya…", "Saya dengar…"'],['k','"Rasanya…", "Saya merasa…"']]],
+ ['v5','Dalam rapat, saya paling terganggu oleh…',[['v','Presentasi yang berantakan atau sulit dibaca'],['a','Suara bising atau orang bicara bersamaan'],['k','Ruangan tidak nyaman atau duduk terlalu lama']]],
+ ['v6','Saat memberi arahan kepada tim lapangan, saya biasanya…',[['v','Menggambar sketsa atau menunjukkan contoh visual'],['a','Menjelaskan langkah demi langkah secara lisan'],['k','Memperagakan atau mendampingi langsung']]]
+];
+const MP=[
+ ['m1','mot','Dalam negosiasi, yang paling mendorong saya adalah…',[['A','Mencapai target dan hasil yang diinginkan'],['B','Mencegah kerugian dan risiko']]],
+ ['m2','ref','Saya tahu saya bernegosiasi dengan baik ketika…',[['A','Saya sendiri merasa yakin hasilnya tepat'],['B','Atasan, tim, atau pihak lain memberi umpan balik positif']]],
+ ['m3','opt','Saat perundingan buntu, saya cenderung…',[['A','Mencari alternatif kreatif yang belum terpikirkan'],['B','Kembali ke langkah atau SOP yang sudah terbukti']]],
+ ['m4','scope','Saat membaca draf perjanjian, saya…',[['A','Memahami gambaran besar dan tujuannya dulu'],['B','Memeriksa klausul dan angka satu per satu']]],
+ ['m5','mot','Kesepakatan yang baik menurut saya adalah yang…',[['A','Membuka peluang dan manfaat baru'],['B','Tidak menimbulkan masalah di kemudian hari']]],
+ ['m6','ref','Sebelum mengambil keputusan penting, saya…',[['A','Mengandalkan penilaian sendiri'],['B','Meminta pendapat orang lain terlebih dahulu']]],
+ ['m7','opt','Saya lebih nyaman bekerja dengan…',[['A','Banyak pilihan yang terbuka'],['B','Alur yang jelas tahap demi tahap']]],
+ ['m8','scope','Saat menjelaskan posisi saya, saya mulai dari…',[['A','Prinsip dan gambaran besar'],['B','Fakta dan rincian']]]
+];
+const SECTIONS=[
+ {id:'S1',title:'Kepribadian',tag:'Big Five',intro:'Seberapa sesuai pernyataan berikut menggambarkan diri Anda pada umumnya?',type:'lik',items:B5.map(x=>({id:x[0],q:x[3]})),lab:['Sangat tidak sesuai','Tidak sesuai','Netral','Sesuai','Sangat sesuai']},
+ {id:'S2',title:'Gaya komunikasi',tag:'Social Styles',intro:'Pikirkan cara Anda berbicara dan memutuskan dalam rapat kerja.',type:'lik',items:SS.map(x=>({id:x[0],q:x[3]})),lab:['Sangat tidak sesuai','Tidak sesuai','Netral','Sesuai','Sangat sesuai']},
+ {id:'S3',title:'Gaya menghadapi konflik',tag:'Dual concern',intro:'Ketika ada perbedaan kepentingan dengan pihak lain (warga, mitra, kontraktor, atasan), seberapa sering Anda…',type:'lik',items:CF.map(x=>({id:x[0],q:x[2]})),lab:['Hampir tidak pernah','Jarang','Kadang-kadang','Sering','Hampir selalu']},
+ {id:'S4',title:'Cara menangkap informasi',tag:'NLP · VAK',intro:'Pilih satu jawaban yang paling menggambarkan Anda.',type:'opt',items:VAK.map(x=>({id:x[0],q:x[1],o:x[2]}))},
+ {id:'S5',title:'Pola berpikir',tag:'NLP · Meta-program',intro:'Pilih satu jawaban yang paling menggambarkan Anda.',type:'opt',items:MP.map(x=>({id:x[0],q:x[2],o:x[3]}))}
+];
+const ALL=SECTIONS.flatMap(s=>s.items.map(i=>i.id));
+
+/* ---------- INTERPRETASI ---------- */
+const COMM={
+ tiger:{en:'Tiger',id:'Harimau',mono:'Ti',col:'--tiger',tag:'Pengarah: tegas dan berorientasi hasil',
+  str:'Cepat mengambil keputusan, berani membuka tawaran, fokus pada target, tidak gentar menghadapi tekanan.',
+  risk:'Terkesan memaksa dan kurang mendengar. Dalam negosiasi dengan masyarakat atau tokoh adat, gaya ini mudah dibaca sebagai arogansi korporasi.',
+  tip:'Latih pertanyaan terbuka dan jeda tiga detik sebelum merespons. Rangkum kepentingan pihak lain sebelum mengajukan tawaran.',
+  deal:'Langsung ke pokok persoalan, tawarkan pilihan beserta konsekuensinya, hormati waktunya, hindari bertele-tele.'},
+ peacock:{en:'Peacock',id:'Merak',mono:'Pe',col:'--peacock',tag:'Ekspresif: persuasif dan membangun suasana',
+  str:'Mudah membangun rapport, mencairkan ketegangan, persuasif, kaya ide, nyaman tampil di forum terbuka.',
+  risk:'Cenderung berjanji berlebihan, kurang detail, bosan pada data, dan berimprovisasi di luar mandat.',
+  tip:'Bawa angka, batas mandat, dan BATNA secara tertulis. Pasangkan dengan rekan pencatat. Konfirmasi setiap janji sebelum diucapkan.',
+  deal:'Beri ruang bicara, apresiasi idenya, gunakan cerita, lalu kunci kesepakatan secara tertulis.'},
+ dolphin:{en:'Dolphin',id:'Lumba-lumba',mono:'Do',col:'--dolphin',tag:'Ramah: pendengar dan penjaga hubungan',
+  str:'Pendengar yang baik, mudah dipercaya, sabar, menjaga hubungan jangka panjang. Sangat cocok untuk dialog dengan pihak terdampak.',
+  risk:'Sulit berkata tidak, mengalah terlalu cepat, menghindari isu keras, dan tidak nyaman dengan tekanan.',
+  tip:'Tetapkan batas bawah (walk-away point) sebelum masuk ruangan. Latih kalimat penolakan yang santun: "Saya paham, tapi itu di luar kewenangan kami. Yang bisa kami tawarkan adalah…"',
+  deal:'Bangun kepercayaan lebih dulu, jangan menekan, beri waktu berpikir, tunjukkan kepedulian yang tulus.'},
+ owl:{en:'Owl',id:'Burung Hantu',mono:'Ow',col:'--owl',tag:'Analitis: teliti dan berbasis data',
+  str:'Persiapan matang, logika runtut, teliti terhadap klausul dan angka, sulit dikecoh.',
+  risk:'Lambat memutuskan, terkesan dingin dan kaku, terjebak analisis berlebihan, dan menyampaikan terlalu banyak data.',
+  tip:'Tetapkan tenggat keputusan. Ucapkan empati secara eksplisit. Sederhanakan data menjadi tiga poin utama untuk audiens non-teknis.',
+  deal:'Kirim data dan dokumen lebih awal, jangan terburu-buru, susun argumen secara runtut, hindari klaim tanpa bukti.'}
+};
+const CONF={
+ comp:{en:'Shark',id:'Hiu',mono:'Sh',col:'--shark',name:'Kompetisi',verb:'mengutamakan kemenangan posisi',
+  when:'Keputusan darurat, isu keselamatan, prinsip hukum yang tidak bisa ditawar, atau melindungi diri dari eksploitasi.',
+  risk:'Merusak hubungan, memicu eskalasi, dan menimbulkan perlawanan masyarakat yang lebih mahal di kemudian hari.',
+  dev:'Tanyakan kepentingan di balik posisi lawan bicara sebelum mempertahankan posisi Anda.'},
+ coll:{en:'Eagle',id:'Elang',mono:'Ea',col:'--eagle',name:'Kolaborasi',verb:'mencari solusi menang-menang',
+  when:'Isu kompleks dan hubungan jangka panjang: FPIC, kompensasi lahan, kesepakatan pemanfaatan bersama.',
+  risk:'Memakan waktu dan energi, tidak efisien untuk isu kecil, dan bisa dimanfaatkan pihak yang bermain kompetitif.',
+  dev:'Kenali kapan solusi "cukup baik" sudah memadai, dan siapkan BATNA bila pihak lain tidak berniat berkolaborasi.'},
+ compr:{en:'Fox',id:'Rubah',mono:'Fo',col:'--fox',name:'Kompromi',verb:'cepat mencari jalan tengah',
+  when:'Tenggat ketat, kekuatan kedua pihak seimbang, atau perlu solusi sementara.',
+  risk:'"Bagi dua" sering meninggalkan nilai di meja; semua pihak hanya setengah puas dan isu dapat muncul kembali.',
+  dev:'Gali kepentingan dulu sebelum membagi. Tanyakan: "Apa yang paling penting bagi Anda dari tuntutan ini?"'},
+ avoid:{en:'Turtle',id:'Kura-kura',mono:'Tu',col:'--turtle',name:'Menghindar',verb:'menunda atau menghindari konfrontasi',
+  when:'Isu sepele, emosi sedang memuncak sehingga perlu jeda, atau informasi belum cukup.',
+  risk:'Masalah membesar, Anda dianggap tidak peduli, dan kepercayaan warga atau mitra menurun.',
+  dev:'Jika menunda, beri jadwal yang jelas: "Kami bahas lagi Kamis pukul 10 dengan data lengkap."'},
+ acc:{en:'Teddy Bear',id:'Beruang',mono:'TB',col:'--bear',name:'Akomodasi',verb:'mengalah demi menjaga hubungan',
+  when:'Kita memang keliru, hubungan lebih penting daripada isu, atau sedang membangun goodwill.',
+  risk:'Dieksploitasi, menciptakan preseden buruk, dan kepentingan organisasi tidak terlindungi.',
+  dev:'Jangan beri konsesi gratis. Gunakan pola "jika… maka…": "Jika kami memenuhi ini, maka kami minta Bapak/Ibu…"'}
+};
+const B5INFO={
+ E:{n:'Ekstraversi',hi:'Nyaman membuka percakapan dan membangun jaringan. Waspadai kebiasaan lebih banyak bicara daripada mendengar.',lo:'Pendengar dan pengamat yang cermat, kuat dalam persiapan. Mintalah jeda atau caucus saat butuh waktu berpikir, dan siapkan pernyataan pembuka secara tertulis.',mid:'Ambivert: luwes berpindah antara tampil dan mendengar sesuai situasi.'},
+ A:{n:'Keramahan',hi:'Membangun kepercayaan dengan mudah, cocok untuk negosiasi integratif. Riset menunjukkan orang dengan skor tinggi rentan mengalah dalam tawar-menawar distributif; tetapkan batas sebelum berunding.',lo:'Tegas mempertahankan kepentingan dan tidak mudah ditekan. Waspadai kesan dingin atau konfrontatif.',mid:'Seimbang antara menjaga hubungan dan mempertahankan kepentingan.'},
+ C:{n:'Ketelitian',hi:'Persiapan, dokumentasi, dan tindak lanjut yang kuat. Waspadai kekakuan saat situasi berubah cepat.',lo:'Fleksibel dan spontan. Risiko utama: persiapan kurang dan komitmen tidak terdokumentasi.',mid:'Cukup terstruktur tanpa kehilangan keluwesan.'},
+ S:{n:'Stabilitas emosi',hi:'Tenang di bawah tekanan dan tidak mudah terpancing provokasi.',lo:'Lebih reaktif terhadap tekanan; kecemasan dapat mendorong tawaran awal yang terlalu rendah. Latih teknik napas, jeda, dan susun skenario terburuk sebelumnya.',mid:'Umumnya stabil, tetapi bisa terpengaruh pada tekanan tinggi.'},
+ O:{n:'Keterbukaan',hi:'Kreatif menemukan opsi baru dan nyaman dengan gagasan tak lazim; aset dalam negosiasi integratif.',lo:'Praktis dan konsisten pada cara yang terbukti. Ajak rekan untuk curah gagasan saat negosiasi buntu.',mid:'Terbuka pada gagasan baru selama relevan dan realistis.'}
+};
+const VAKINFO={v:{n:'Visual',t:'Gunakan peta, infografis, foto lokasi, dan ringkasan satu halaman. Dengarkan kata seperti "kelihatannya" atau "jelas" dari lawan bicara.'},
+ a:{n:'Auditori',t:'Andalkan dialog, cerita, dan rangkuman lisan. Perhatikan nada dan pilihan kata; ulangi kesepakatan dengan suara jelas.'},
+ k:{n:'Kinestetik',t:'Ajak kunjungan lapangan, simulasi, atau peragaan. Bangun suasana nyaman; perhatikan bahasa tubuh dan "rasa" pertemuan.'}};
+const MPINFO={
+ mot:{a:'Menuju (toward)',b:'Menjauhi (away from)',ta:'Termotivasi oleh tujuan dan manfaat; bingkai tawaran sebagai peluang.',tb:'Termotivasi menghindari masalah; tonjolkan mitigasi risiko dan jaminan.'},
+ ref:{a:'Internal',b:'Eksternal',ta:'Menilai dari keyakinan sendiri; berikan data lalu biarkan ia menyimpulkan.',tb:'Butuh pengakuan pihak lain; gunakan testimoni, preseden, dan dukungan tokoh.'},
+ opt:{a:'Opsi',b:'Prosedur',ta:'Senang menjajaki alternatif; berguna saat buntu, tetapi perlu disiplin menutup kesepakatan.',tb:'Nyaman dengan tahapan jelas; berikan peta jalan negosiasi langkah demi langkah.'},
+ scope:{a:'Global',b:'Detail',ta:'Mulai dari gambaran besar; pasangkan dengan rekan yang teliti klausul.',tb:'Kuat pada rincian; sampaikan dulu tujuan besar agar tidak tenggelam dalam detail.'}
+};
+
+/* ---------- STATE ---------- */
+/* Mode uji coba: tombol demo & data contoh hanya muncul bila URL memuat ?demo */
+const DEMO=new URLSearchParams(location.search).has('demo');
+if(DEMO){document.getElementById('btn-demo').hidden=false;document.getElementById('btn-sample').hidden=false;}
+let ans={};
+const LS='negprof.v1';
+try{const s=JSON.parse(localStorage.getItem(LS)||'null'); if(s){ans=s.ans||{}; setTimeout(()=>{nm.value=s.nm||'';un.value=s.un||'';},0)}}catch(e){}
+function save(){try{localStorage.setItem(LS,JSON.stringify({ans,nm:nm.value,un:un.value}))}catch(e){}}
+const $=s=>document.querySelector(s);
+const nm=$('#nm'),un=$('#un');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- RENDER TES ---------- */
+function renderTest(){
+ let n=0,h='';
+ SECTIONS.forEach((s,si)=>{
+  h+=`<div class="card"><div class="section-head"><div class="eyebrow">Bagian ${si+1} dari 5 · ${s.tag}</div><h2>${s.title}</h2><p class="muted">${s.intro}</p></div>`;
+  if(s.type==='lik') h+=`<div class="scale-legend"><span>1 = ${s.lab[0]}</span><span>5 = ${s.lab[4]}</span></div>`;
+  s.items.forEach(it=>{n++;
+   h+=`<div class="item" id="it-${it.id}"><div class="q"><b>${n}</b><span>${esc(it.q)}</span></div>`;
+   if(s.type==='lik'){h+=`<div class="lik" role="radiogroup" aria-label="Pernyataan ${n}">`;
+    for(let v=1;v<=5;v++) h+=`<label><input type="radio" name="${it.id}" id="${it.id}-${v}" value="${v}" ${ans[it.id]==v?'checked':''}><span>${v}</span>${s.lab[v-1]}</label>`;
+    h+='</div>';}
+   else{h+=`<div class="opts" role="radiogroup">`;
+    it.o.forEach(o=>h+=`<label><input type="radio" name="${it.id}" id="${it.id}-${o[0]}" value="${o[0]}" ${ans[it.id]==o[0]?'checked':''}>${esc(o[1])}</label>`);
+    h+='</div>';}
+   h+='</div>';});
+  h+='</div>';});
+ $('#sections').innerHTML=h;
+ progress();
+}
+$('#sections').addEventListener('change',e=>{const t=e.target; if(t.type!=='radio')return;
+ ans[t.name]=isNaN(t.value)?t.value:+t.value; document.getElementById('it-'+t.name).classList.remove('missing'); save(); progress();});
+[nm,un].forEach(el=>el.addEventListener('input',save));
+function progress(){const d=ALL.filter(k=>ans[k]!=null).length; $('#pbar').style.width=(d/ALL.length*100)+'%'; $('#pcount').textContent=d+'/'+ALL.length;}
+function finish(){
+ const miss=ALL.filter(k=>ans[k]==null);
+ if(miss.length){miss.forEach(k=>document.getElementById('it-'+k).classList.add('missing'));
+  const el=document.getElementById('it-'+miss[0]); el.scrollIntoView({behavior:'smooth',block:'center'});
+  $('#pcount').textContent=`${ALL.length-miss.length}/${ALL.length} · ${miss.length} belum dijawab`; return;}
+ show('hasil');
+}
+$('#btn-finish').onclick=finish; $('#btn-finish2').onclick=finish;
+$('#btn-demo').onclick=()=>{ALL.forEach(k=>{if(ans[k]==null){const it=VAK.find(x=>x[0]==k)||MP.find(x=>x[0]==k);
+  ans[k]= it? (VAK.find(x=>x[0]==k)? 'vak'[Math.floor(Math.random()*3)] : 'AB'[Math.floor(Math.random()*2)]) : 1+Math.floor(Math.random()*5);}});
+ if(!nm.value)nm.value='Peserta Uji Coba'; save(); renderTest();};
+let resetArm=false;
+$('#btn-reset').onclick=e=>{const b=e.currentTarget; if(!resetArm){resetArm=true;b.textContent='Yakin? Klik sekali lagi';setTimeout(()=>{resetArm=false;b.textContent='Kosongkan jawaban'},4000);return;}
+ ans={};resetArm=false;b.textContent='Kosongkan jawaban';save();renderTest();window.scrollTo(0,0);};
+
+/* ---------- SKOR ---------- */
+const pct=(sum,min,max)=>Math.round((sum-min)/(max-min)*100);
+function compute(a,name,unit){
+ const b={};['E','A','C','N','O'].forEach(t=>{const its=B5.filter(x=>x[1]==t); b[t]=pct(its.reduce((s,x)=>s+(x[2]?6-a[x[0]]:a[x[0]]),0),4,20);});
+ const s={};['a','r'].forEach(t=>{const its=SS.filter(x=>x[1]==t); s[t]=pct(its.reduce((q,x)=>q+(x[2]?6-a[x[0]]:a[x[0]]),0),6,30);});
+ const c={};['comp','coll','compr','avoid','acc'].forEach(t=>{c[t]=pct(CF.filter(x=>x[1]==t).reduce((q,x)=>q+a[x[0]],0),3,15)});
+ const k={v:0,a:0,k:0}; VAK.forEach(x=>k[a[x[0]]]++);
+ const m={mot:0,ref:0,opt:0,scope:0}; MP.forEach(x=>{if(a[x[0]]=='A')m[x[1]]++});
+ return {n:name||'Tanpa nama',u:unit||'',b:{E:b.E,A:b.A,C:b.C,S:100-b.N,O:b.O},s,c,k,m};
+}
+function derive(R){
+ const comm=R.s.a>=50?(R.s.r>=50?'peacock':'tiger'):(R.s.r>=50?'dolphin':'owl');
+ const order=['coll','compr','comp','acc','avoid'];
+ const conf=Object.keys(R.c).sort((x,y)=>R.c[y]-R.c[x]||order.indexOf(x)-order.indexOf(y));
+ const ei=R.b.E>60?'Ekstrovert':R.b.E<40?'Introvert':'Ambivert';
+ const vmax=Math.max(R.k.v,R.k.a,R.k.k); const vak=['v','a','k'].filter(x=>R.k[x]==vmax);
+ return {comm,conf,ei,vak};
+}
+const lvl=v=>v>60?'Tinggi':v<40?'Rendah':'Sedang';
+/* kode */
+function encode(R){const arr=[R.n,R.u,[R.b.E,R.b.A,R.b.C,R.b.S,R.b.O],[R.s.a,R.s.r],[R.c.comp,R.c.coll,R.c.compr,R.c.avoid,R.c.acc],[R.k.v,R.k.a,R.k.k],[R.m.mot,R.m.ref,R.m.opt,R.m.scope]];
+ return 'NEG1.'+btoa(unescape(encodeURIComponent(JSON.stringify(arr)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function decode(code){try{let s=code.trim().slice(5).replace(/-/g,'+').replace(/_/g,'/'); while(s.length%4)s+='=';
+ const a=JSON.parse(decodeURIComponent(escape(atob(s))));
+ return {n:a[0],u:a[1],b:{E:a[2][0],A:a[2][1],C:a[2][2],S:a[2][3],O:a[2][4]},s:{a:a[3][0],r:a[3][1]},c:{comp:a[4][0],coll:a[4][1],compr:a[4][2],avoid:a[4][3],acc:a[4][4]},k:{v:a[5][0],a:a[5][1],k:a[5][2]},m:{mot:a[6][0],ref:a[6][1],opt:a[6][2],scope:a[6][3]}};}catch(e){return null}}
+
+/* ---------- VISUAL ---------- */
+function quad(points){
+ const X=v=>44+v/100*280, Y=v=>18+(100-v)/100*280;
+ let g=`<svg class="quad" viewBox="0 0 340 340" role="img" aria-label="Peta gaya komunikasi">`;
+ const q=[['tiger',44,18],['peacock',184,18],['owl',44,158],['dolphin',184,158]];
+ q.forEach(([k,x,y])=>{g+=`<rect x="${x}" y="${y}" width="140" height="140" fill="var(${COMM[k].col})" fill-opacity=".12"/>`;
+  g+=`<text x="${x+8}" y="${y+20}" font-size="13" font-weight="700" style="fill:var(${COMM[k].col})">${COMM[k].en}</text>`;});
+ g+=`<line x1="184" y1="18" x2="184" y2="298" stroke="var(--line)" stroke-width="1.5"/><line x1="44" y1="158" x2="324" y2="158" stroke="var(--line)" stroke-width="1.5"/>`;
+ g+=`<rect x="44" y="18" width="280" height="280" fill="none" stroke="var(--line)"/>`;
+ g+=`<text x="184" y="318" font-size="11" text-anchor="middle">Fokus tugas  ←  Responsivitas  →  Fokus orang</text>`;
+ g+=`<text x="14" y="158" font-size="11" text-anchor="middle" transform="rotate(-90 14 158)">Bertanya  ←  Asertivitas  →  Mengarahkan</text>`;
+ points.forEach(p=>{const x=X(Math.min(97,Math.max(3,p.r))),y=Y(Math.min(97,Math.max(3,p.a)));
+  g+=`<circle cx="${x}" cy="${y}" r="${p.lbl?11:8}" fill="var(--accent)" stroke="var(--surface)" stroke-width="2.5"/>`;
+  if(p.lbl)g+=`<text x="${x}" y="${y+4}" font-size="9.5" font-weight="700" text-anchor="middle" style="fill:var(--surface)">${esc(p.lbl)}</text>`;});
+ return g+'</svg>';
+}
+function bars(rows){return `<div class="bars">${rows.map(r=>`<div class="barrow ${r.top?'top':''}"><span class="lbl">${r.l}</span><span class="track"><i style="width:${Math.max(2,r.v)}%;background:var(${r.c||'--accent'})"></i></span><span class="v">${r.v}</span></div>`).join('')}</div>`}
+const badge=(o,sz)=>`<div class="badge" style="background:var(${o.col})${sz?';width:'+sz+'px;height:'+sz+'px':''}" aria-hidden="true">${o.mono}</div>`;
+
+/* ---------- HASIL ---------- */
+const SAMPLE_R={n:'Contoh Peserta',u:'Community Relations',b:{E:38,A:72,C:66,S:56,O:63},s:{a:42,r:67},c:{comp:33,coll:83,compr:58,avoid:50,acc:67},k:{v:3,a:1,k:2},m:{mot:1,ref:2,opt:2,scope:1}};
+function renderResult(){
+ const complete=ALL.every(k=>ans[k]!=null);
+ const R=complete?compute(ans,nm.value.trim(),un.value.trim()):SAMPLE_R;
+ const D=derive(R), cm=COMM[D.comm], c1=CONF[D.conf[0]], c2=CONF[D.conf[1]], cl=CONF[D.conf[4]];
+ const code=encode(R);
+ let h='';
+ if(!complete)h+=`<div class="notice sample"><b>Ini contoh hasil.</b> Selesaikan semua pernyataan di tab "Isi Tes" untuk melihat profil Anda sendiri.</div>`;
+ h+=`<div class="card hero"><div class="badges">${badge(cm)}${badge(c1)}</div><div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+   <div class="eyebrow">${esc(R.n)}${R.u?' · '+esc(R.u):''}</div>
+   <div class="big">${cm.en} – ${c1.en}</div>
+   <p>${cm.tag}, yang dalam konflik cenderung <b>${c1.verb}</b>.</p>
+   <div class="chips"><span class="chip">${D.ei} (E ${R.b.E})</span><span class="chip">Komunikasi: ${cm.en} / ${cm.id}</span><span class="chip">Konflik: ${c1.en} / ${c1.id}</span><span class="chip">Cadangan: ${c2.en}</span><span class="chip">VAK: ${D.vak.map(x=>VAKINFO[x].n).join(' + ')}</span></div>
+ </div></div>`;
+ // charts
+ h+=`<div class="grid2">
+  <div class="card"><h3>Gaya komunikasi</h3>${quad([{a:R.s.a,r:R.s.r}])}<p class="small muted">Asertivitas ${R.s.a} · Responsivitas ${R.s.r}</p></div>
+  <div class="card"><h3>Gaya konflik</h3>${bars(D.conf.map((k,i)=>({l:`${CONF[k].en} · ${CONF[k].name}`,v:R.c[k],c:CONF[k].col,top:i==0})))}
+   <p class="small muted">Semua mode berguna pada situasi tertentu. Skor menunjukkan seberapa sering mode itu Anda pakai.</p></div>
+  <div class="card"><h3>Kepribadian (Big Five)</h3>${bars(['E','A','C','S','O'].map(t=>({l:B5INFO[t].n,v:R.b[t]})))}</div>
+  <div class="card"><h3>Lapis NLP</h3>${bars(['v','a','k'].map(x=>({l:VAKINFO[x].n,v:Math.round(R.k[x]/6*100),c:'--accent2'})))}
+   <div class="poles">${Object.keys(MPINFO).map(d=>{const p=MPINFO[d],v=R.m[d];return `<div class="pole"><div class="ends"><span class="${v==2?'':''}">${v==2?'<b>'+p.a+'</b>':p.a}</span><span>${v==0?'<b>'+p.b+'</b>':p.b}</span></div><div class="line"><i style="left:${[92,50,8][v]}%"></i></div></div>`}).join('')}</div></div>
+ </div>`;
+ // interpretation
+ h+=`<div class="card"><div class="row" style="gap:12px">${badge(cm,44)}<div><div class="eyebrow">Gaya komunikasi</div><h2>${cm.en} (${cm.id})</h2></div></div>
+  <div class="interp"><dl class="blk"><dt>Kekuatan</dt><dd>${cm.str}</dd></dl><dl class="blk"><dt>Titik buta</dt><dd>${cm.risk}</dd></dl><dl class="blk"><dt>Latihan</dt><dd>${cm.tip}</dd></dl><dl class="blk"><dt>Cara orang lain menghadapi Anda</dt><dd>${cm.deal}</dd></dl></div></div>`;
+ h+=`<div class="card"><div class="row" style="gap:12px">${badge(c1,44)}<div><div class="eyebrow">Gaya konflik utama</div><h2>${c1.en} (${c1.id}) · ${c1.name}</h2></div></div>
+  <div class="interp"><dl class="blk"><dt>Tepat dipakai</dt><dd>${c1.when}</dd></dl><dl class="blk"><dt>Risiko</dt><dd>${c1.risk}</dd></dl><dl class="blk"><dt>Kembangkan</dt><dd>${c1.dev}</dd></dl>
+  <dl class="blk"><dt>Gaya cadangan</dt><dd><b>${c2.en} · ${c2.name}</b>: biasanya muncul saat gaya utama tidak berhasil atau di bawah tekanan.</dd></dl>
+  <dl class="blk"><dt>Paling jarang</dt><dd><b>${cl.en} · ${cl.name}</b> (skor ${R.c[D.conf[4]]}). ${cl.when.replace(/\.$/,'')} adalah situasi saat mode ini justru dibutuhkan.</dd></dl></div></div>`;
+ h+=`<div class="card"><div class="eyebrow">Kepribadian & negosiasi</div><div>${['E','A','C','S','O'].map(t=>{const v=R.b[t],L=lvl(v),inf=B5INFO[t];return `<div class="trait"><b>${inf.n} ${v}<span class="lvl">${t=='E'?D.ei:L}</span></b><span>${L=='Tinggi'?inf.hi:L=='Rendah'?inf.lo:inf.mid}</span></div>`}).join('')}</div></div>`;
+ h+=`<div class="card"><div class="eyebrow">Lapis NLP</div><div>${D.vak.map(x=>`<div class="trait"><b>Dominan ${VAKINFO[x].n}</b><span>${VAKINFO[x].t}</span></div>`).join('')}
+  ${Object.keys(MPINFO).map(d=>{const p=MPINFO[d],v=R.m[d];return `<div class="trait"><b>${v==2?p.a:v==0?p.b:p.a+' / '+p.b+' (seimbang)'}</b><span>${v==2?p.ta:v==0?p.tb:'Luwes: '+p.ta.split(';')[0].toLowerCase()+', sekaligus '+p.tb.split(';')[0].toLowerCase()+'.'}</span></div>`}).join('')}</div></div>`;
+ // plan
+ const plan=[c1.dev, cm.tip.split('. ')[0]+'.'];
+ if(R.b.S<40)plan.push('Siapkan rutinitas regulasi emosi: minta jeda (caucus) saat terpancing, dan latih respons untuk tiga provokasi yang paling mungkin muncul.');
+ else if(R.b.A>65)plan.push('Tuliskan walk-away point dan target sebelum setiap perundingan; jangan ubah di ruangan tanpa konsultasi tim.');
+ else if(R.b.E<40)plan.push('Sebagai introvert, siapkan pernyataan pembuka tertulis dan sepakati sinyal dengan rekan untuk meminta jeda.');
+ else if(R.b.C<40)plan.push('Gunakan daftar periksa persiapan negosiasi (kepentingan, BATNA, ZOPA, mandat) dan notulen kesepakatan.');
+ else plan.push(`Latih mode ${cl.en} (${cl.name}) lewat role-play, agar repertoar Anda lebih lengkap.`);
+ h+=`<div class="card"><h3>Tiga hal untuk dilatih</h3><ul class="clean">${plan.map(p=>`<li>${p}</li>`).join('')}</ul></div>`;
+ h+=`<div class="card"><h3>Kode hasil untuk fasilitator</h3><p class="small muted">Salin kode ini dan kirimkan ke fasilitator. Kode berisi nama, unit, dan skor Anda.</p>
+  <div class="code" id="mycode">${complete?code:'(kode muncul setelah semua pernyataan dijawab)'}</div>
+  <div class="row"><button class="btn primary" id="btn-copy" ${complete?'':'disabled'}>Salin kode</button><button class="btn" id="btn-copysum" ${complete?'':'disabled'}>Salin ringkasan</button><span class="toast" id="copy-toast"></span></div></div>`;
+ $('#p-hasil').innerHTML=h;
+ const summary=`${R.n}${R.u?' ('+R.u+')':''}: ${cm.en}–${c1.en} | ${D.ei} | Komunikasi ${cm.en}/${cm.id} (A${R.s.a}/R${R.s.r}) | Konflik ${c1.en} ${R.c[D.conf[0]]}, cadangan ${c2.en} | Big Five E${R.b.E} A${R.b.A} C${R.b.C} S${R.b.S} O${R.b.O} | VAK ${D.vak.map(x=>VAKINFO[x].n).join('+')}`;
+ if(complete){$('#btn-copy').onclick=()=>copy(code,'#copy-toast','#mycode'); $('#btn-copysum').onclick=()=>copy(summary,'#copy-toast');}
+}
+function copy(text,toastSel,selectSel){
+ const ok=()=>{$(toastSel).textContent='Tersalin';setTimeout(()=>$(toastSel).textContent='',2500)};
+ try{navigator.clipboard.writeText(text).then(ok,()=>fallback())}catch(e){fallback()}
+ function fallback(){if(selectSel){const r=document.createRange();r.selectNodeContents($(selectSel));const s=getSelection();s.removeAllRanges();s.addRange(r);}
+  $(toastSel).textContent='Teks sudah dipilih, tekan Ctrl/⌘+C';}
+}
+
+/* ---------- TIM ---------- */
+const SAMPLE_TEAM=[
+ ['Andi (contoh)','Pertanahan',[71,44,58,69,55],[78,35],[75,50,58,25,33]],
+ ['Rina (contoh)','Community Relations',[63,81,50,56,69],[58,83],[33,83,58,42,75]],
+ ['Bayu (contoh)','Legal',[31,50,88,75,56],[44,21],[58,75,42,50,33]],
+ ['Sari (contoh)','CSR',[44,88,63,44,75],[33,79],[25,67,58,67,83]],
+ ['Dimas (contoh)','HSE',[56,56,81,63,44],[67,40],[67,58,50,33,42]],
+ ['Lestari (contoh)','Lingkungan',[25,69,69,38,81],[29,54],[25,58,50,75,67]],
+ ['Yoga (contoh)','Operasi',[69,38,44,81,50],[83,58],[83,42,67,17,25]],
+ ['Maya (contoh)','Humas',[81,75,56,50,88],[63,88],[42,67,75,50,58]]
+].map(([n,u,b,s,c],i)=>encode({n,u,b:{E:b[0],A:b[1],C:b[2],S:b[3],O:b[4]},s:{a:s[0],r:s[1]},c:{comp:c[0],coll:c[1],compr:c[2],avoid:c[3],acc:c[4]},k:[{v:3,a:2,k:1},{v:1,a:4,k:1},{v:4,a:1,k:1},{v:2,a:2,k:2},{v:2,a:1,k:3},{v:4,a:1,k:1},{v:1,a:2,k:3},{v:2,a:3,k:1}][i],m:{mot:[2,1,0,1,0,0,2,2][i],ref:[2,0,2,0,1,2,2,0][i],opt:[1,2,0,2,0,1,2,2][i],scope:[2,2,0,1,0,0,1,2][i]}}));
+let teamRows=[];
+function initials(n){return n.replace(/\(.*?\)/g,'').trim().split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase()||'?'}
+function analyzeTeam(){
+ const codes=($('#codes').value.match(/NEG1\.[A-Za-z0-9_-]+/g)||[]);
+ const people=codes.map(decode).filter(Boolean);
+ const out=$('#team-out');
+ if(!people.length){out.innerHTML=`<div class="notice">Belum ada kode yang valid. Kode diawali dengan <code>NEG1.</code></div>`;teamRows=[];return;}
+ const P=people.map(R=>({R,D:derive(R),ini:initials(R.n)}));
+ teamRows=P; const N=P.length;
+ const cnt=(f,k)=>P.filter(p=>f(p)==k).length;
+ const mean=f=>Math.round(P.reduce((s,p)=>s+f(p),0)/N);
+ let h='';
+ if(/contoh/.test(people[0].n))h+=`<div class="notice sample"><b>Data contoh.</b> Delapan peserta fiktif untuk menunjukkan cara kerja rekap. Ganti dengan kode peserta Anda.</div>`;
+ // summary chips
+ h+=`<div class="card"><div class="eyebrow">${N} peserta</div><h2>Komposisi tim</h2><div class="legend-animals">
+  ${Object.keys(COMM).map(k=>`<div class="animal-mini">${badge(COMM[k])}<div><b>${COMM[k].en}</b><br><span class="muted">${cnt(p=>p.D.comm,k)} orang</span></div></div>`).join('')}
+  ${Object.keys(CONF).map(k=>`<div class="animal-mini">${badge(CONF[k])}<div><b>${CONF[k].en}</b><br><span class="muted">${cnt(p=>p.D.conf[0],k)} orang · ${CONF[k].name}</span></div></div>`).join('')}
+ </div><div class="chips"><span class="chip">Introvert ${cnt(p=>p.D.ei,'Introvert')}</span><span class="chip">Ambivert ${cnt(p=>p.D.ei,'Ambivert')}</span><span class="chip">Ekstrovert ${cnt(p=>p.D.ei,'Ekstrovert')}</span></div></div>`;
+ h+=`<div class="grid2"><div class="card"><h3>Peta gaya komunikasi tim</h3>${quad(P.map(p=>({a:p.R.s.a,r:p.R.s.r,lbl:p.ini})))}</div>
+  <div class="card"><h3>Rata-rata tim</h3><div class="eyebrow">Gaya konflik</div>${bars(Object.keys(CONF).map(k=>({l:CONF[k].en,v:mean(p=>p.R.c[k]),c:CONF[k].col})))}
+  <div class="eyebrow">Big Five</div>${bars(['E','A','C','S','O'].map(t=>({l:B5INFO[t].n,v:mean(p=>p.R.b[t])})))}</div></div>`;
+ // insights
+ const ins=[]; const share=k=>cnt(p=>p.D.conf[0],k)/N;
+ if(share('avoid')+share('acc')>=.4)ins.push(['w','Kecenderungan menghindar atau mengalah tinggi',`${Math.round((share('avoid')+share('acc'))*100)}% peserta memakai Turtle atau Teddy Bear sebagai gaya utama. Risiko: konsesi tanpa imbal balik dan isu yang tertunda. Latih teknik "jika… maka…" dan penetapan batas.`]);
+ if(share('comp')>=.3)ins.push(['w','Potensi eskalasi',`${Math.round(share('comp')*100)}% peserta bergaya Shark. Dalam negosiasi dengan masyarakat, tempatkan mereka bersama Dolphin/Eagle dan latih pertanyaan kepentingan.`]);
+ if(!cnt(p=>p.D.conf[0],'coll'))ins.push(['w','Tidak ada Eagle','Tidak ada peserta dengan kolaborasi sebagai gaya utama. Untuk isu FPIC atau kompensasi, latih penggalian kepentingan dan penciptaan opsi bersama.']);
+ Object.keys(COMM).forEach(k=>{if(!cnt(p=>p.D.comm,k))ins.push(['i',`Tidak ada ${COMM[k].en}`,{tiger:'Tim mungkin kurang tegas saat perlu menutup kesepakatan atau menahan tekanan.',peacock:'Tim mungkin kurang luwes mencairkan suasana dan membangun antusiasme forum.',dolphin:'Tim mungkin kurang sabar mendengarkan pihak terdampak; tunjuk penjaga hubungan secara sadar.',owl:'Tim mungkin kurang teliti terhadap data dan klausul; pastikan ada peninjau dokumen.'}[k]])});
+ const intro=cnt(p=>p.D.ei,'Introvert')/N;
+ if(intro>=.5)ins.push(['i','Mayoritas introvert','Sediakan waktu caucus, bahan tertulis sebelum rapat, dan giliran bicara yang terstruktur dalam role-play.']);
+ if(cnt(p=>p.D.ei,'Ekstrovert')/N>=.6)ins.push(['i','Mayoritas ekstrovert','Risiko saling memotong dan monolog. Terapkan aturan "rangkum dulu sebelum menanggapi".']);
+ if(mean(p=>p.R.b.S)<45)ins.push(['w','Stabilitas emosi tim rendah','Masukkan sesi latihan menghadapi provokasi dan teknik jeda.']);
+ if(mean(p=>p.R.b.A)>65)ins.push(['i','Keramahan tim tinggi','Kuat untuk negosiasi integratif, tetapi rentan pada tawar-menawar keras. Wajibkan penetapan walk-away point.']);
+ if(!ins.length)ins.push(['i','Komposisi seimbang','Tidak ada kecenderungan ekstrem. Fokuskan latihan pada perpindahan gaya sesuai situasi.']);
+ h+=`<div class="card"><h3>Temuan untuk fasilitator</h3><div style="display:flex;flex-direction:column;gap:10px">${ins.map(([s,t,d])=>`<div class="insight"><span class="sev ${s}">${s=='w'?'Perhatian':'Catatan'}</span><div><b>${t}.</b> ${d}</div></div>`).join('')}</div></div>`;
+ // roles
+ const used=new Set(); const pick=f=>{let best=null,bv=-1e9;P.forEach((p,i)=>{if(used.has(i))return;const v=f(p);if(v>bv){bv=v;best=i}});if(best!=null)used.add(best);return best};
+ const roles=[
+  ['Juru runding utama','Asertif, stabil, dan terbiasa mencari solusi bersama.',p=>p.R.s.a+p.R.b.S+Math.max(p.R.c.coll,p.R.c.compr)],
+  ['Analis & penjaga dokumen','Teliti terhadap angka, klausul, dan mandat.',p=>p.R.b.C+(100-p.R.s.r)/2+(p.D.comm=='owl'?30:0)+(2-p.R.m.scope)*10],
+  ['Penjaga hubungan','Membangun kepercayaan dan membaca suasana pihak lain.',p=>p.R.b.A+p.R.s.r+p.R.c.coll/2],
+  ['Pengamat & pencatat','Tenang, mengamati bahasa tubuh, memberi masukan saat caucus.',p=>(100-p.R.b.E)+p.R.b.S]
+ ];
+ if(N>=2)h+=`<div class="card"><h3>Usulan peran tim perunding</h3><div class="roles">${roles.slice(0,Math.min(4,N)).map(([r,d,f])=>{const i=pick(f);const p=P[i];return `<div class="role"><span class="eyebrow">${r}</span><span class="who">${esc(p.R.n)}</span><span class="small muted">${COMM[p.D.comm].en} – ${CONF[p.D.conf[0]].en} · ${d}</span></div>`}).join('')}</div><p class="small muted">Usulan berbasis skor; sesuaikan dengan mandat, senioritas, dan pengetahuan isu.</p></div>`;
+ // pairs (max contrast)
+ if(N>=2){const left=P.map((_,i)=>i),pairs=[];
+  while(left.length>1){const i=left.shift();let bj=0,bd=-1;left.forEach((j,ix)=>{const d=Math.hypot(P[i].R.s.a-P[j].R.s.a,P[i].R.s.r-P[j].R.s.r)+(P[i].D.conf[0]!=P[j].D.conf[0]?20:0);if(d>bd){bd=d;bj=ix}});pairs.push([i,left.splice(bj,1)[0]]);}
+  h+=`<div class="card"><h3>Pasangan role-play</h3><p class="small muted">Dipasangkan dengan gaya yang paling berbeda agar peserta berlatih menghadapi lawan bicara yang tidak serupa.</p><div class="pairs">${pairs.map(([a,b])=>`<div>• <b>${esc(P[a].R.n)}</b> (${COMM[P[a].D.comm].en}–${CONF[P[a].D.conf[0]].en}) × <b>${esc(P[b].R.n)}</b> (${COMM[P[b].D.comm].en}–${CONF[P[b].D.conf[0]].en})</div>`).join('')}${left.length?`<div>• <b>${esc(P[left[0]].R.n)}</b> menjadi pengamat atau bergabung ke pasangan mana pun.</div>`:''}</div></div>`;}
+ // table
+ h+=`<div class="card"><h3>Tabel peserta</h3><div class="tablewrap"><table><thead><tr><th>Nama</th><th>Unit</th><th>Profil</th><th>E/I</th><th>Konflik utama</th><th>Cadangan</th><th>E</th><th>A</th><th>C</th><th>S</th><th>O</th><th>VAK</th></tr></thead><tbody>
+  ${P.map(p=>`<tr><td data-label="Nama"><b>${esc(p.R.n)}</b></td><td data-label="Unit">${esc(p.R.u)}</td><td data-label="Profil"><span class="dot" style="background:var(${COMM[p.D.comm].col})"></span>${COMM[p.D.comm].en}–${CONF[p.D.conf[0]].en}</td><td data-label="E/I">${p.D.ei}</td><td data-label="Konflik utama"><span class="dot" style="background:var(${CONF[p.D.conf[0]].col})"></span>${CONF[p.D.conf[0]].name}</td><td data-label="Cadangan">${CONF[p.D.conf[1]].name}</td>${['E','A','C','S','O'].map(t=>`<td class="num" data-label="${B5INFO[t].n}">${p.R.b[t]}</td>`).join('')}<td data-label="VAK">${p.D.vak.map(x=>x.toUpperCase()).join('+')}</td></tr>`).join('')}
+ </tbody></table></div></div>`;
+ out.innerHTML=h;
+}
+$('#btn-team').onclick=analyzeTeam;
+$('#btn-sample').onclick=()=>{$('#codes').value=SAMPLE_TEAM.join('\n');analyzeTeam();};
+$('#btn-csv').onclick=()=>{if(!teamRows.length){$('#team-toast').textContent='Analisis tim dulu';return;}
+ const rows=[['Nama','Unit','Komunikasi','Konflik utama','Konflik cadangan','E/I','Ekstraversi','Keramahan','Ketelitian','Stabilitas','Keterbukaan','Asertivitas','Responsivitas','Shark','Eagle','Fox','Turtle','TeddyBear','V','A','K']];
+ teamRows.forEach(p=>rows.push([p.R.n,p.R.u,COMM[p.D.comm].en,CONF[p.D.conf[0]].en,CONF[p.D.conf[1]].en,p.D.ei,p.R.b.E,p.R.b.A,p.R.b.C,p.R.b.S,p.R.b.O,p.R.s.a,p.R.s.r,p.R.c.comp,p.R.c.coll,p.R.c.compr,p.R.c.avoid,p.R.c.acc,p.R.k.v,p.R.k.a,p.R.k.k]));
+ const csv=rows.map(r=>r.map(x=>/[",\n]/.test(String(x))?'"'+String(x).replace(/"/g,'""')+'"':x).join(',')).join('\n');
+ copy(csv,'#team-toast');};
+
+/* ---------- TABS ---------- */
+function show(t){document.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab==t));
+ ['tes','hasil','tim','metode'].forEach(k=>$('#p-'+k).hidden=k!=t);
+ if(t=='hasil')renderResult(); if(t=='tim'&&DEMO&&!$('#team-out').innerHTML){$('#codes').value=SAMPLE_TEAM.join('\n');analyzeTeam();}
+ try{history.replaceState(null,'',location.pathname+location.search+'#'+t)}catch(e){} window.scrollTo(0,0);}
+document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>show(b.dataset.tab));
+renderTest();
+const h0=location.hash.slice(1); if(['hasil','tim','metode'].includes(h0))show(h0);
+</script>
+
+</body></html>
