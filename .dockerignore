@@ -3,3 +3,7 @@
 README.md
 Dockerfile
 .dockerignore
+docker-compose.yml
+data/
+node_modules/
+docker-compose.override.yml

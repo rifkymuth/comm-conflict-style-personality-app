@@ -1,0 +1,7 @@
+# Khusus pengembangan lokal: `docker compose up` otomatis menggabungkan berkas ini dengan
+# docker-compose.yml sehingga aplikasi bisa dibuka di http://localhost:3000.
+# Coolify hanya memakai docker-compose.yml, jadi port tidak dipublikasikan di server produksi.
+services:
+  negprof:
+    ports:
+      - "${HOST_PORT:-3000}:3000"

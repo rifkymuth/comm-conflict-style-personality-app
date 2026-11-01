@@ -1,6 +1,6 @@
 # Dipakai oleh Coolify (Build Pack: Docker Compose).
 # Coolify membangun image dari Dockerfile di bawah, lalu mengarahkan domain yang Anda
-# atur di Coolify ke port 80 yang di-"expose". Jangan pakai "ports:" (publish ke host) —
+# atur di Coolify ke port 3000 yang di-"expose". Jangan pakai "ports:" (publish ke host) —
 # biarkan proxy Coolify (Traefik/Caddy) yang menangani routing dan TLS.
 services:
   negprof:
@@ -9,4 +9,10 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     expose:
-      - "80"
+      - "3000"
+    volumes:
+      # Basis data SQLite (hasil peserta per kode sesi); bertahan saat redeploy
+      - negprof-data:/data
+
+volumes:
+  negprof-data:

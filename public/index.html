@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Profil Gaya Negosiasi</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2337409A%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%2214%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%23E3A84B%22%2F%3E%3Cpath%20d%3D%22M23%2021l3%204-6-3z%22%20fill%3D%22%23E3A84B%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%226%22%20width%3D%2215%22%20height%3D%2211%22%20rx%3D%223%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M9%2016l-3%204%206-3z%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%228%22%20cy%3D%2211.5%22%20r%3D%221.15%22%20fill%3D%22%2337409A%22%2F%3E%3Ccircle%20cx%3D%2211.5%22%20cy%3D%2211.5%22%20r%3D%221.15%22%20fill%3D%22%2337409A%22%2F%3E%3Ccircle%20cx%3D%2215%22%20cy%3D%2211.5%22%20r%3D%221.15%22%20fill%3D%22%2337409A%22%2F%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#37409A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">A+CSR Indonesia × AsM Law Office · Pelatihan Negosiasi &amp; Resolusi Konflik</div>
+    <h1>Profil Gaya Negosiasi</h1>
+    <p class="lede">Kenali kepribadian, gaya komunikasi, dan cara Anda menghadapi konflik sebelum masuk ke meja perundingan. 61 pernyataan, sekitar 12–15 menit. Tidak ada jawaban benar atau salah.</p>
+  </header>
+
+  <div class="print-head"><b>Profil Gaya Negosiasi</b><span id="print-meta"></span></div>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="tab-tes" data-tab="tes" aria-selected="true">1 · Isi Tes</button>
+    <button role="tab" id="tab-hasil" data-tab="hasil" aria-selected="false">2 · Hasil Saya</button>
+    <button role="tab" id="tab-tim" data-tab="tim" aria-selected="false">3 · Rekap Tim</button>
+    <button role="tab" id="tab-metode" data-tab="metode" aria-selected="false">Metodologi</button>
+  </nav>
+
+  <!-- TES -->
+  <section id="p-tes" class="wrap" style="gap:16px">
+    <div class="card">
+      <div class="id-grid">
+        <label class="field" for="nm">Nama<input id="nm" autocomplete="name" placeholder="mis. Rina Pratiwi"></label>
+        <label class="field" for="un">Unit / jabatan<input id="un" placeholder="mis. Community Relations"></label>
+        <label class="field wide" for="sc">Kode sesi (dari fasilitator)<input id="sc" class="mono" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="mis. K7M2QX"></label>
+      </div>
+      <p class="small muted">Jawab sesuai diri Anda yang sebenarnya dalam situasi kerja sehari-hari, bukan yang ideal. Jawaban tersimpan otomatis di perangkat ini; hasil akhir dikirim ke sesi pelatihan saat Anda menekan "Lihat hasil".</p>
+    </div>
+    <div class="progress">
+      <div class="bar"><i id="pbar"></i></div>
+      <span class="count" id="pcount">0/61</span>
+      <button class="btn primary" id="btn-finish">Lihat hasil</button>
+    </div>
+    <div id="sections" class="wrap" style="gap:16px"></div>
+    <div class="row">
+      <button class="btn primary" id="btn-finish2">Lihat hasil</button>
+      <button class="btn" id="btn-demo" hidden>Isi jawaban acak (uji coba)</button>
+      <button class="btn warn" id="btn-reset">Kosongkan jawaban</button>
+    </div>
+  </section>
+
+  <!-- HASIL -->
+  <section id="p-hasil" class="wrap" style="gap:16px" hidden></section>
+
+  <!-- TIM -->
+  <section id="p-tim" class="wrap" style="gap:16px" hidden>
+    <div class="card no-print">
+      <h2>Rekap tim untuk fasilitator</h2>
+      <p class="muted">Bagikan <b>kode sesi</b> (atau tautan peserta) sebelum tes dimulai. Hasil peserta otomatis terkumpul di sesi itu saat mereka menekan "Lihat hasil". Kode hasil yang dikirim manual (WhatsApp/email) bisa ditempel di bawah, satu per baris, lalu disimpan ke sesi.</p>
+      <div class="row">
+        <label class="field grow" for="team-sc">Kode sesi<input id="team-sc" class="mono" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="mis. K7M2QX"></label>
+      </div>
+      <div class="row">
+        <button class="btn primary" id="btn-load">Muat dari sesi</button>
+        <button class="btn" id="btn-save">Simpan ke sesi</button>
+        <button class="btn" id="btn-gen">Buat kode acak</button>
+        <button class="btn" id="btn-link">Salin tautan peserta</button>
+        <span class="toast" id="session-toast"></span>
+      </div>
+      <label class="field" for="codes">Kode hasil peserta<textarea id="codes" placeholder="NEG1.xxxxx&#10;NEG1.yyyyy"></textarea></label>
+      <div class="row">
+        <button class="btn primary" id="btn-team">Analisis tim</button>
+        <button class="btn" id="btn-sample" hidden>Muat data contoh</button>
+        <button class="btn" id="btn-csv">Salin tabel (CSV)</button>
+        <button class="btn" id="btn-team-pdf">Simpan PDF</button>
+        <span class="toast" id="team-toast"></span>
+      </div>
+    </div>
+    <div id="team-out" class="wrap" style="gap:16px"></div>
+  </section>
+
+  <!-- METODE -->
+  <section id="p-metode" class="wrap" style="gap:16px" hidden>
+    <div class="card">
+      <h2>Lima lapis pengukuran</h2>
+      <div class="interp">
+        <dl class="blk"><dt>Bagian 1</dt><dd><b>Big Five (Mini-IPIP, 20 butir)</b> — Ekstraversi, Keramahan (Agreeableness), Ketelitian (Conscientiousness), Stabilitas Emosi, Keterbukaan. Butir diadaptasi dari Mini-IPIP (Donnellan dkk., 2006), turunan International Personality Item Pool (Goldberg) yang berdomain publik. Ekstraversi menentukan label Introvert / Ambivert / Ekstrovert.</dd></dl>
+        <dl class="blk"><dt>Bagian 2</dt><dd><b>Gaya Sosial (12 butir)</b> — dua dimensi dari model Social Styles (Merrill &amp; Reid, 1981), yang juga mendasari DISC: <i>asertivitas</i> (bertanya ↔ mengarahkan) dan <i>responsivitas</i> (fokus tugas ↔ fokus orang). Kombinasinya menghasilkan empat gaya komunikasi: Tiger, Peacock, Dolphin, Owl.</dd></dl>
+        <dl class="blk"><dt>Bagian 3</dt><dd><b>Gaya Konflik (15 butir)</b> — model <i>dual concern</i> (Blake &amp; Mouton, 1964; Thomas &amp; Kilmann, 1974; Rahim, 1983): kepedulian pada kepentingan sendiri × kepedulian pada pihak lain. Metafora hewan mengikuti D.W. Johnson (Shark, Turtle, Teddy Bear, Fox; mode kolaborasi diberi nama Eagle agar tidak bertabrakan dengan Owl). Butir disusun ulang; tidak menyalin instrumen TKI yang berlisensi.</dd></dl>
+        <dl class="blk"><dt>Bagian 4–5</dt><dd><b>Lapis NLP</b> — preferensi sistem representasi VAK (Bandler &amp; Grinder) dan empat meta-program dari LAB Profile (Charvet): arah motivasi, rujukan, opsi/prosedur, cakupan. Berguna untuk membangun <i>rapport</i> dan memilih bahasa persuasi.</dd></dl>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Rumus skor</h2>
+      <ul class="clean">
+        <li>Skala Likert 1–5; butir negatif dibalik (6 − nilai).</li>
+        <li>Skor dimensi = (jumlah − minimum) ÷ (maksimum − minimum) × 100. Rendah &lt; 40, Sedang 40–60, Tinggi &gt; 60.</li>
+        <li>Stabilitas Emosi = 100 − skor Neurotisisme.</li>
+        <li>Gaya komunikasi: asertivitas ≥ 50 dan responsivitas &lt; 50 → Tiger; keduanya ≥ 50 → Peacock; asertivitas &lt; 50, responsivitas ≥ 50 → Dolphin; keduanya &lt; 50 → Owl.</li>
+        <li>Gaya konflik utama = mode dengan skor tertinggi; mode kedua = gaya cadangan; mode terendah = area latihan.</li>
+        <li>VAK = hitungan pilihan terbanyak dari 6 butir; meta-program = 2 butir per dimensi (2–0 jelas, 1–1 seimbang).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Batasan penggunaan</h2>
+      <ul class="clean">
+        <li>Alat ini untuk <b>refleksi dan diskusi pelatihan</b>, bukan untuk seleksi, promosi, atau penilaian kinerja.</li>
+        <li>Versi bahasa Indonesia ini adalah adaptasi dan belum divalidasi psikometrik pada populasi Indonesia. Untuk keputusan SDM, gunakan instrumen berlisensi yang dikelola psikolog.</li>
+        <li>Gaya konflik bersifat situasional: semua mode berguna pada keadaan tertentu. Skor menggambarkan kebiasaan, bukan batas kemampuan.</li>
+        <li>Klaim NLP tentang sistem representasi dominan tidak didukung riset empiris yang kuat (Sharpley, 1987; Witkowski, 2010). Gunakan hasil VAK dan meta-program sebagai alat bantu komunikasi, bukan diagnosis.</li>
+        <li>Jawaban butir hanya tersimpan di browser peserta. Yang dikirim ke server hanya kode hasil (nama, unit, dan skor), dikelompokkan per kode sesi. Siapa pun yang mengetahui kode sesi dapat melihat hasil sesi itu; bagikan kode hanya kepada peserta pelatihan.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Rujukan</h2>
+      <ul class="clean ref">
+        <li>Barry, B. &amp; Friedman, R. (1998). Bargainer characteristics in distributive and integrative negotiation. <i>J. Personality &amp; Social Psychology</i>, 74(2).</li>
+        <li>Donnellan, M.B., Oswald, F.L., Baird, B.M. &amp; Lucas, R.E. (2006). The Mini-IPIP scales. <i>Psychological Assessment</i>, 18(2).</li>
+        <li>Merrill, D. &amp; Reid, R. (1981). <i>Personal Styles and Effective Performance</i>. Chilton.</li>
+        <li>Thomas, K.W. &amp; Kilmann, R.H. (1974). <i>Thomas-Kilmann Conflict Mode Instrument</i>. Xicom.</li>
+        <li>Rahim, M.A. (1983). A measure of styles of handling interpersonal conflict. <i>Academy of Management Journal</i>, 26(2).</li>
+        <li>Johnson, D.W. (1981). <i>Reaching Out: Interpersonal Effectiveness and Self-Actualization</i>. Prentice-Hall.</li>
+        <li>Sharma, S., Bottom, W. &amp; Elfenbein, H.A. (2013). On the role of personality, cognitive ability, and emotional intelligence in predicting negotiation outcomes. <i>Organizational Psychology Review</i>, 3(4).</li>
+        <li>Charvet, S.R. (1997). <i>Words That Change Minds: Mastering the Language of Influence</i>. Kendall/Hunt.</li>
+        <li>Witkowski, T. (2010). Thirty-five years of research on Neuro-Linguistic Programming. <i>Polish Psychological Bulletin</i>, 41(2).</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
